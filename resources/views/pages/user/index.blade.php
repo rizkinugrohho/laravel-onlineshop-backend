@@ -22,11 +22,11 @@
                 </div>
             </div>
             <div class="section-body">
-                {{-- <div class="row">
+                <div class="row">
                     <div class="col-12">
                         @include('layouts.alert')
                     </div>
-                </div> --}}
+                </div>
                 <h2 class="section-title">Users</h2>
                 <p class="section-lead">
                     You can manage all Users, such as editing, deleting and more.
@@ -37,7 +37,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>All Posts</h4>
+                                <h4>All Users</h4>
                             </div>
                             <div class="card-body">
                                 <div class="float-left">
@@ -51,7 +51,8 @@
                                 <div class="float-right">
                                     <form method="GET" action="{{ route('user.index') }}">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search" name="name">
+                                            <input type="text" class="form-control" placeholder="Search by name or email"
+                                                name="query">
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                                             </div>

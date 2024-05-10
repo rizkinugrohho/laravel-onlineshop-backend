@@ -543,7 +543,7 @@
                                             <td>
                                                 <a href="#" class="font-weight-600"><img
                                                         src="{{ asset('img/avatar/avatar-1.png') }}" alt="avatar"
-                                                        width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                                                        width="30" class="rounded-circle mr-1"> Rizki Nugroho</a>
                                             </td>
                                             <td>
                                                 <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip"
@@ -565,7 +565,7 @@
                                             <td>
                                                 <a href="#" class="font-weight-600"><img
                                                         src="{{ asset('img/avatar/avatar-1.png') }}" alt="avatar"
-                                                        width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                                                        width="30" class="rounded-circle mr-1"> Rizki Nugroho</a>
                                             </td>
                                             <td>
                                                 <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip"
@@ -587,7 +587,7 @@
                                             <td>
                                                 <a href="#" class="font-weight-600"><img
                                                         src="{{ asset('img/avatar/avatar-1.png') }}" alt="avatar"
-                                                        width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                                                        width="30" class="rounded-circle mr-1"> Rizki Nugroho</a>
                                             </td>
                                             <td>
                                                 <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip"
@@ -609,7 +609,7 @@
                                             <td>
                                                 <a href="#" class="font-weight-600"><img
                                                         src="{{ asset('img/avatar/avatar-1.png') }}" alt="avatar"
-                                                        width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                                                        width="30" class="rounded-circle mr-1"> Rizki Nugroho</a>
                                             </td>
                                             <td>
                                                 <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip"
@@ -631,7 +631,7 @@
                                             <td>
                                                 <a href="#" class="font-weight-600"><img
                                                         src="{{ asset('img/avatar/avatar-1.png') }}" alt="avatar"
-                                                        width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                                                        width="30" class="rounded-circle mr-1"> Rizki Nugroho</a>
                                             </td>
                                             <td>
                                                 <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip"
@@ -653,7 +653,7 @@
                                             <td>
                                                 <a href="#" class="font-weight-600"><img
                                                         src="{{ asset('img/avatar/avatar-1.png') }}" alt="avatar"
-                                                        width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                                                        width="30" class="rounded-circle mr-1"> Rizki Nugroho</a>
                                             </td>
                                             <td>
                                                 <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip"

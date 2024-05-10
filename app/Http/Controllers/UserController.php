@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -12,13 +13,17 @@ class UserController extends Controller
     //index
     public function index(Request $request)
     {
+        $categories = Category::all();
         //get users with pagination
         $users = DB::table('users')
-            ->when($request->input('name'), function ($query, $name) {
-                return $query->where('name', 'like', '%' . $name . '%');
+            ->when($request->input('query'), function ($query, $queryValue) {
+                return $query->where(function ($subQuery) use ($queryValue) {
+                    $subQuery->where('name', 'like', '%' . $queryValue . '%')
+                        ->orWhere('email', 'like', '%' . $queryValue . '%');
+                });
             })
             ->paginate(5);
-        return view('pages.user.index', compact('users'));
+        return view('pages.user.index', compact('users', 'categories'));
     }
 
     //create
@@ -33,7 +38,7 @@ class UserController extends Controller
         $data = $request->all();
         $data['password'] = Hash::make($request->input('password'));
         User::create($data);
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->with('success', 'User created successfully');
     }
 
     //show
@@ -62,7 +67,7 @@ class UserController extends Controller
             $data['password'] = $user->password;
         }
         $user->update($data);
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->with('success', 'User updated successfully');
     }
 
     //destroy
@@ -70,6 +75,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->with('success', 'User deleted');
     }
+
 }

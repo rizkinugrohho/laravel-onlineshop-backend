@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Advanced Forms')
+@section('title', 'Add Category')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -37,7 +37,7 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Name</label>
+                                <label>Category Name</label>
                                 <input type="text"
                                     class="form-control @error('name')
                                 is-invalid
@@ -50,8 +50,9 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="card-footer text-right">
+                        <div class="card-footer text-left">
                             <button class="btn btn-primary">Submit</button>
+                            <button type="button" id="backButton" class="btn btn-primary">Back</button>
                         </div>
                     </form>
                 </div>
@@ -62,4 +63,9 @@
 @endsection
 
 @push('scripts')
+    <script>
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
 @endpush

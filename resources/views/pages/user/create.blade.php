@@ -106,8 +106,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer text-right">
+                        <div class="card-footer text-left">
                             <button class="btn btn-primary">Submit</button>
+                            <button type="button" id="backButton" class="btn btn-primary">Back</button>
                         </div>
                     </form>
                 </div>
@@ -118,4 +119,9 @@
 @endsection
 
 @push('scripts')
+    <script>
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
 @endpush

@@ -16,7 +16,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Advanced Forms</h1>
+                <h1>Edit Products</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
                     <div class="breadcrumb-item"><a href="#">Forms</a></div>
@@ -43,7 +43,7 @@
                                     class="form-control @error('name')
                                 is-invalid
                             @enderror"
-                                    name="name">
+                                    name="name" value="{{ $product->name }}">
                                 @error('name')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -56,7 +56,7 @@
                                     class="form-control @error('price')
                                 is-invalid
                             @enderror"
-                                    name="price">
+                                    name="price" value="{{ $product->price }}">
                                 @error('price')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -69,7 +69,7 @@
                                     class="form-control @error('stock')
                                 is-invalid
                             @enderror"
-                                    name="stock">
+                                    name="stock" value="{{ $product->stock }}">
                                 @error('stock')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -104,8 +104,9 @@
                             </div>
                         </div>
                 </div>
-                <div class="card-footer text-right">
+                <div class="card-footer text-left">
                     <button class="btn btn-primary">Submit</button>
+                    <button type="button" id="backButton" class="btn btn-primary">Back</button>
                 </div>
                 </form>
             </div>
@@ -116,4 +117,9 @@
 @endsection
 
 @push('scripts')
+    <script>
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
 @endpush

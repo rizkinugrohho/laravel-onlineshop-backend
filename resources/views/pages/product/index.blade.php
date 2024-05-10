@@ -22,11 +22,11 @@
                 </div>
             </div>
             <div class="section-body">
-                {{-- <div class="row">
+                <div class="row">
                     <div class="col-12">
                         @include('layouts.alert')
                     </div>
-                </div> --}}
+                </div>
 
 
                 <div class="row mt-4">
@@ -34,9 +34,12 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="float-right">
-                                    <form method="GET" action="{{ route('user.index') }}">
+                                    <form method="GET" action="{{ route('product.index') }}">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search" name="name">
+                                            <input type="text" class="form-control" placeholder="Search by name"
+                                                name="name">
+                                            <input type="text" class="form-control" placeholder="Search by category"
+                                                name="category">
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                                             </div>
