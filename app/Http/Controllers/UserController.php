@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -14,15 +13,24 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $categories = Category::all();
-        //get users with pagination
-        $users = DB::table('users')
-            ->when($request->input('query'), function ($query, $queryValue) {
-                return $query->where(function ($subQuery) use ($queryValue) {
-                    $subQuery->where('name', 'like', '%' . $queryValue . '%')
-                        ->orWhere('email', 'like', '%' . $queryValue . '%');
-                });
-            })
-            ->paginate(5);
+        $role = $request->input('role');
+
+        $usersQuery = User::query();
+        if ($role) {
+            $usersQuery->where('roles', $role);
+        }
+
+        // Query for filter searching
+        $usersQuery->when($request->input('query'), function ($query, $queryValue) {
+            return $query->where(function ($subQuery) use ($queryValue) {
+                $subQuery->where('name', 'like', '%' . $queryValue . '%')
+                    ->orWhere('email', 'like', '%' . $queryValue . '%');
+            });
+        });
+
+        // Call paginate() in query created
+        $users = $usersQuery->paginate(5);
+
         return view('pages.user.index', compact('users', 'categories'));
     }
 
